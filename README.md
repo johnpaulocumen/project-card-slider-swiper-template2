@@ -1,4 +1,4 @@
-# Project Card Slider Swiper UI - Template 1
+# Project Card Slider Swiper UI - Template 2
 
 A modern **Project Card Slider** built using the Swiper.js library, designed for showcasing project information in a visually appealing and interactive format.
 
