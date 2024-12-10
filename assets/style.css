@@ -1,0 +1,257 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Swiper Container */
+.project-slider {
+  width: 40%;
+  height: 85%;
+  position: relative;
+}
+
+/* Project Slide */
+.project-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Smooth opacity and transform transition */
+}
+
+/* Add smooth opacity and visibility for active slide */
+.swiper-slide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease-in-out; /* Smooth opacity transition */
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Project Card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+}
+
+/* Image Style for Desktop Ratio */
+.project-card-image img {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Content */
+.project-card-content {
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-card-content h2 {
+  font-size: 1.5em;
+  color: #e0e0e0;
+}
+
+.project-card-content p {
+  margin: 0 0 20px;
+  color: #b0b0b0;
+  font-size: 1em;
+}
+
+.project-card-content .project-btn {
+  padding: 10px 20px;
+  background-color: #1f6feb;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.project-card-content .project-btn:hover {
+  background-color: #185abc;
+}
+
+/* Pagination: Move outside the container (right center) */
+.swiper-pagination {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* Pagination Dots */
+.swiper-pagination-bullet {
+  background: #4b4b4b;
+}
+
+.swiper-pagination-bullet-active {
+  background: #d3d3d3;
+}
+
+/* Navigation Arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: ''; /* Removes default symbols */
+}
+
+/* Arrow Button Container - Positioned at the Bottom */
+.arrow-container {
+  position: fixed; /* Fix the container to the viewport */
+  bottom: 80px; /* Space from the bottom */
+  right: 200px; /* Space from the right */
+  display: flex;
+  flex-direction: column; /* Stack arrows vertically */
+  gap: 10px; /* Space between the arrows */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Arrow Button Styling */
+.arrow-container .arrow-btn {
+  background-color: #000000; /* Dark background color */
+  color: #e0e0e0; /* Light text for contrast */
+  font-size: 1.5em; /* Font size for arrows */
+  border-radius: 50%;
+  width: 60px; /* Size adjustments for better usability */
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: 2px solid #7d7d7d; /* Add a subtle border for definition */
+}
+
+/* Hover Effect */
+.arrow-container .arrow-btn:hover {
+  background-color: #555555; /* Slightly lighter for hover effect */
+  color: #ffffff; /* Pure white for hover text color */
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* General Responsive Adjustments */
+@media (max-width: 1024px) {
+  /* Project Slider */
+  .project-slider {
+    width: 70%;
+    height: 70%; /* Adjust container size */
+  }
+
+  /* Project Slide */
+  .project-slide {
+    padding: 10px; /* Add padding for smaller screens */
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  /* Image */
+  .project-card-image img {
+    margin-top: 10px;
+    width: 100%; /* Ensure full width */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Content */
+  .project-card-content {
+    text-align: center; /* Center-align text */
+  }
+
+  .project-card-content h2 {
+    font-size: 1.3em; /* Slightly smaller font */
+  }
+
+  .project-card-content p {
+    font-size: 1em;
+  }
+
+  .project-card-content .project-btn {
+    font-size: 0.8em;
+    padding: 8px 16px;
+  }
+
+  /* Arrow Container */
+  .arrow-container {
+    bottom: 50px;
+    right: 50%; /* Center horizontally */
+    transform: translateX(50%); /* Adjust centering */
+    flex-direction: row; /* Buttons side by side */
+    gap: 15px;
+  }
+
+  .arrow-container .arrow-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Project Slider */
+  .project-slider {
+    width: 90%;
+    height: 65%; /* Compact for smaller screens */
+  }
+
+  /* Project Slide */
+  .project-slide {
+    padding: 8px;
+  }
+
+  /* Image */
+  .project-card-image img {
+    margin-top: 5px;
+  }
+
+  /* Content */
+  .project-card-content h2 {
+    font-size: 1em; /* Adjust title size */
+  }
+
+  .project-card-content p {
+    font-size: 0.9em; /* Smaller paragraph size */
+  }
+
+  .project-card-content .project-btn {
+    font-size: 0.7em;
+    padding: 6px 12px;
+  }
+
+  /* Arrow Container */
+  .arrow-container {
+    bottom: 50px;
+    right: 50%; /* Center horizontally */
+    transform: translateX(50%); /* Adjust centering */
+    flex-direction: row; /* Buttons side by side */
+    gap: 15px;
+  }
+
+  .arrow-container .arrow-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2em;
+  }
+}
+
